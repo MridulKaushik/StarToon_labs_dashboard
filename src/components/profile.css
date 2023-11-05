@@ -1,0 +1,159 @@
+
+/* ----------------- Divider -------------------- */
+hr{
+    width:100%;
+    color:#7D7D7D;
+}
+
+#endLine{
+    height: 2vh !important;
+}
+
+/* -------- Dashboard header --------------------- */
+.header{
+    height:7vh;
+    width: 100%;
+    padding: 1vh 1vh;
+}
+
+.back-button{
+    margin-right:2vh;
+    height: 5vh;
+    mix-blend-mode: multiply;
+    object-fit: contain;
+}
+
+.back-pic{
+    height: 5vh;
+    mix-blend-mode: multiply;
+}
+
+.view-patient-container{
+    display: flex;
+    height: 5vh;
+    align-items: center;
+}
+
+.view-patient{
+    font-size: calc(1.375rem + 0.3vw);
+    
+}
+
+h4, p{
+    color: #012E57 !important;
+}
+
+/* ------------------ Profile Top Information ------------------------ */
+.profile-top{
+    height: 21vh;
+}
+
+.profile-pic {
+    height: 90%;
+    border: 1px solid;
+}
+
+/* ------------------ SemiCircle Progress bar ------------------------------- */
+
+.goalReachead-progressbar{
+    margin-top: 5vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 19vh;
+}
+
+#visual-meter{
+    
+    width: 80%;
+    background-color:#002647;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+
+
+.Rate{
+    height:15vh;
+}
+
+
+@keyframes progress {
+    0% {
+        --percentage: 0;
+    }
+
+    100% {
+        --percentage: var(--value);
+    }
+}
+
+@property --percentage {
+    syntax: '<number>';
+    inherits: true;
+    initial-value: 0;
+}
+
+[role="progressbar"] {
+    --percentage: var(--value);
+    --primary: #FCB000;
+    --secondary: #FFFFFF;
+    --size: 300px;
+    animation: progress 2s 0.5s forwards;
+    width: var(--size);
+    aspect-ratio: 2 / 1;
+    border-radius: 50% / 100% 100% 0 0;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+[role="progressbar"]::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 98%;
+    background: conic-gradient(from 0.75turn at 50% 100%, var(--primary) calc(var(--percentage) * 1% / 2), var(--secondary) calc(var(--percentage) * 1% / 2 + 0.1%));
+    mask: radial-gradient(at 50% 100%, white 55%, transparent 55.5%);
+    mask-mode: alpha;
+    -webkit-mask: radial-gradient(at 50% 100%, #0000 55%, #000 55.5%);
+    -webkit-mask-mode: alpha;
+}
+
+[role="progressbar"]::after {
+    counter-reset: percentage var(--value);
+    content: counter(percentage) '%';
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: calc(var(--size) / 5);
+    color: var(--primary);
+}
+
+
+/* -------------- Reamining Information About the patient ----------------------------------- */
+
+.remaining-info{
+    margin-top: 7vh;
+}
+
+.typeIcon{
+    height: 3vh;
+    margin: 0 1vh; 
+}
+
+
+/* --------------- Dashboard footer ---------------------------------------------- */
+.medical-history{
+    position: relative;
+    right: 2vh;
+}
+
+.medical-icon{
+    height:3vh;
+    width: 3vh;
+}
+
+
